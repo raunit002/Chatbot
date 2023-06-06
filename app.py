@@ -8,7 +8,7 @@ app = Flask(__name__)
 API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
 # Set your OpenAI API credentials
-API_KEY = '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'
+API_KEY = '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'
 
 @app.route("/", methods=["GET", "POST"])
 def home():
