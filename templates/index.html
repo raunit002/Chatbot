@@ -76,10 +76,18 @@
         <br>
         <input type="submit" value="Send">
     </form>
+    <br>
     
-    {% if response %}
-        <h3>Response:</h3>
-        <p>{{ response }}</p>
-    {% endif %}
+    <h3>Chatbot Response:</h3>
+    <div id="response">{{ response }}</div>
+    <button onclick="speak()">Listen to Response</button>
+    <script>
+        function speak() {
+            var responseText = document.getElementById("response").textContent;
+            var utterance = new SpeechSynthesisUtterance(responseText);
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+    
 </body>
 </html>
